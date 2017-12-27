@@ -1,7 +1,6 @@
 # Contains different C programs
   - Files
     - Read contents from the file and copy the content into a local array
-  - Bubble Sort
 - Sorting
   - Bubble Sort
 - Arrays
