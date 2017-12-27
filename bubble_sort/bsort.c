@@ -21,21 +21,25 @@ void swap(int *a, int *b)
    return;
 }
 
-/* Use two array indices(i,j) and traverse the array comparing values
+/* Use two array indices(i,j) and traverse the array comparing adjacent values
    at respective indices and swapping the values if value at array indices 
-   i is greater than j
+   i is greater than j. Continue this until the array is sorted.
 */
 void bb_sort(int *ptr, int arr_size)
 {
-    int i,j;
+    int i,j, swapped;
 
-    for (i = 0; i < arr_size; i++) {
-        for (j = i+1; j < arr_size; j++) {
+    do {
+        swapped = 0;
+        for (i = 0; i < arr_size-1; i++) {
+            j = i+1;
             if(ptr[i] > ptr[j]) {
+                swapped = 1; //Set if one more iteration is required
                 swap(ptr+i, ptr+j);
             }
         }
-    }
+    } while (swapped > 0);
+
     return;
 }
 
