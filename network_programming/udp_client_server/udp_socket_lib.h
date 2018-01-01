@@ -1,8 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
-#include <sys/socket.h>
+#include <netinet/ip.h>
+#include <netinet/in.h>
 #include <assert.h>
+#include <strings.h>
+#include <netdb.h>
+
+#define BUFFER_SIZE 64
 
 int UDP_Open(int port);
 int UDP_FillSockAddr(struct sockaddr_in *addr, char *hostName, int port);
